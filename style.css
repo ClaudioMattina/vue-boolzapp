@@ -30,3 +30,43 @@
     padding: 5px;
 }
 
+
+.my-borderR{
+    border-radius: 50%;
+}
+
+.notifiche{
+    height: 70px;
+    background-color: aquamarine;
+}
+
+#container-input-search{
+    width: 90%;
+}
+
+#icon-container-search-chat{
+    width: 10%;
+}
+
+.input-search{
+    width: 100%;
+}
+
+.icon-search-chat{
+    width: 10%;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+
+.scheda-contatto{
+    height: 60px;
+}
+
+.scheda-img-container{
+    width: 90%;
+}
+
+.time-container{
+    width: 10%;
+}
