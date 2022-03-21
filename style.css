@@ -1,0 +1,32 @@
+.my-prifile{
+    height: 60px;
+    background-color: rgb(157, 162, 167);
+    border-right: 2px solid grey;
+}
+
+.who-chatting{
+    height: 60px;
+    background-color: rgb(157, 162, 167);
+}
+
+.my-img-profilo{
+    height: 100%;
+}
+
+.my-img-profilo img{
+    height: 100%;
+    border-radius: 50%;
+    padding: 5%;
+}
+
+.chatting-friend{
+    height: 100%;
+    width: 60%;
+}
+
+.chatting-friend img{
+    height: 100%;
+    border-radius: 50%;
+    padding: 5px;
+}
+
