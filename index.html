@@ -18,7 +18,7 @@
 
     <div id="app">
 
-        <div class="container mt-5">
+        <div class="container mt-3">
 
             <div class="row">
                 <!-- top-bar del mio profilo -->
@@ -73,7 +73,7 @@
             <main>
                 <div class="row">
 
-                    <div class="col-5 p-0">
+                    <div class="col-5 p-0 contact-bar ">
                         <!-- notifiche -->
                         <div class="d-flex notifiche">
                             <img class="my-borderR p-2" src="img/avatar_3.jpg" alt="">
@@ -99,14 +99,16 @@
 
 
                         <!-- shcede contatti -->
-                        <div class="d-flex scheda-contatto p-0 border justify-content-between" >
+                        <div class="d-flex scheda-contatto p-0 border justify-content-between pe-2" >
 
                             <div class="d-flex p-2 scheda-img-container"> 
 
                                 <img class="my-borderR" src="img/avatar_3.jpg" alt="">
-                                <p>ciao</p>
-                            
-                                <p class="text-secondary">bellooooooooooo</p>
+                                <div>
+                                    <p class="m-0">ciao</p>
+                                    <p class="text-secondary">bellooooooooooo</p>
+                                </div>
+                                
                             </div>
 
                             <div class="time-container">
@@ -119,9 +121,24 @@
                     </div>
 
                 
+                    <!-- contenitore messaggi -->
+                    <div class="col-7 chat-container p-0 pe-2">
+                        <div class="bg-container">
+                            
+                        </div>
 
-                    <div class="col-7">
-
+                        <!-- bar-bottom -->
+                        <div class="row writing-container m-0">
+                            <div class="smile col-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-face-grin-wide"></i>
+                            </div>
+                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                <input placeholder="Scrivi il messaggio" type="text">
+                            </div>
+                            <div class="col-3 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
