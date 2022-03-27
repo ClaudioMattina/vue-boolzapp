@@ -1,3 +1,4 @@
+
 #app{
     min-width: 1000px;
 }
@@ -64,7 +65,7 @@
 
 
 .scheda-contatto{
-    height: 60px;
+    height: 80px;
 }
 
 .scheda-img-container{
@@ -75,9 +76,12 @@
     width: 10%;
 }
 
-
-.contact-bar{
-    height: 600px;
+.contacts-bar{
+    overflow-y: scroll;
+    height: 550px;
+}
+.left-bar{
+    height: 650px;
     background-color: antiquewhite;
 }
 
@@ -100,4 +104,32 @@
 
 .smile{
     width: 100%;
+}
+
+.active{
+    background-color: lightgrey;
+}
+
+.message.sent{
+ background-color: lightgreen;
+ align-self: flex-end;
+}
+
+.message.recived{
+    background-color: white;
+    align-self: flex-start;
+}
+
+.ciccio{
+    width: 100%;
+}
+
+.pallino{
+    height: 650px;
+}
+
+.no-message{
+    background-color: rgb(153, 150, 150);
+    color: white;
+    align-self: center;
 }

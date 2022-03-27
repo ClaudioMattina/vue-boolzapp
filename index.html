@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Boolzapp</title>
 </head>
-<body>
+<body style="background-color: lightseagreen;">
 
     <div id="app">
 
-        <div class="container mt-3">
+        <div class="container mt-2">
 
             
             <div class="row">
@@ -74,7 +74,7 @@
             <main>
                 <div class="row">
 
-                    <div class="col-5 p-0 contact-bar ">
+                    <div class="col-5 p-0 left-bar ">
                         <!-- notifiche -->
                         <div class="d-flex notifiche">
                             <img class="my-borderR p-2" src="img/avatar_3.jpg" alt="">
@@ -99,24 +99,31 @@
                         </div>
 
 
-                        <!-- shcede contatti -->
-                        <div class="d-flex scheda-contatto p-0 border justify-content-between pe-2" >
+                        <!-- contenitore contatti -->
+                        <div class="overflow-scroll contacts-bar ">
 
-                            <div class="d-flex p-2 scheda-img-container"> 
-
-                                <img class="my-borderR" src="img/avatar_3.jpg" alt="">
-                                <div>
-                                    <p class="m-0">ciao</p>
-                                    <p class="text-secondary">bellooooooooooo</p>
-                                </div>
-                                
+                            <!-- contenitore contatto singolo -->
+                                 <!-- for che cicla gli elementi in contacts -->                                      <!-- aggiungo una classe active se l'indice corrisponde -->
+                            <div v-for="(contact, index) in contacts" class="d-flex scheda-contatto p-0 border pe-2" :class="(activeContact === index) ? 'active' : '' " @click="changeContact(index)" >
+    
+                                    <div class="d-flex p-2 scheda-img-container"> 
+                                       
+                                        <img class="my-borderR" :src=" `img/avatar${contact.avatar}.jpg` " alt="">
+                                        <div>
+                                            <p class="m-0"> {{contact.name}} </p>
+                                            <p class="text-secondary">Ultimo messaggio</p>
+                                        </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                    <div class="time-container">
+                                        <p class="text-secondary">12:00</p>
+                                    </div>
+                                    
                             </div>
-
-                            <div class="time-container">
-                                <p class="text-secondary">12:00</p>
-                            </div>
-
                         </div>
+                        
 
 
                     </div>
@@ -124,22 +131,34 @@
                 
                     <!-- contenitore messaggi -->
                     <div class="col-7 chat-container p-0 pe-2">
-                        <div class="bg-container">
+
+                        <div class="bg-container d-flex flex-column px-3 py-4">
+
+                            <div v-for="element in contacts[activeContact].messages" class="message sent px-3 py-2 mb-3 rounded" :class="(element.status == 'sent') ? 'sent' : 'recived' ">
+                                {{element.message}}
+                            </div>
+                            <div v-if="contacts[activeContact].messages.length == 0" class="no-message px-3 py-2">
+                                non ci sono messaggi
+                            </div>
                             
                         </div>
 
-                        <!-- bar-bottom -->
-                        <div class="row writing-container m-0">
-                            <div class="smile col-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-face-grin-wide"></i>
-                            </div>
-                            <div class="col-6 d-flex justify-content-center align-items-center">
-                                <input placeholder="Scrivi il messaggio" type="text">
-                            </div>
-                            <div class="col-3 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-microphone"></i>
-                            </div>
+
+                    <!-- bar-bottom -->
+                    <div class="row writing-container d-flex justify-content-between m-0">
+                        <div class="smile col-2 d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-face-grin-wide"></i>
                         </div>
+                        <div class="col-8 d-flex justify-content-center align-items-center">
+                            <input class="ciccio rounded-3" v-model="newMessageContent" @keyup.enter="sendNewMessage(contacts ,activeContact, newMessageContent)" placeholder="Scrivi il messaggio" type="text">
+                        </div>
+                        <div class="col-2 d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </div>
+
+                       
+
                     </div>
                 </div>
             </main>
